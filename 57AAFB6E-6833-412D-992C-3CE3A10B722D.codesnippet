@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>module_plist_change</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSArray *)&lt;#deals#&gt;
+{
+    if (&lt;#_deals#&gt; == nil) {
+        // 1.从plist中加载数据
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"&lt;#deals#&gt;.plist" ofType:nil];
+        NSArray *sourceArray = [NSArray arrayWithContentsOfFile:path];
+                               
+        // 2.将数据转换为模型
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        for (NSDictionary *dict in sourceArray) {
+            &lt;#JZDeal *#&gt;&lt;#deal#&gt; = [&lt;#JZDeal#&gt; &lt;#dealWithDict#&gt;:dict];
+            [mutableArray addObject:&lt;#deal#&gt;];
+        }
+        &lt;#_deals#&gt; = mutableArray;
+    }
+    return &lt;#_deals#&gt;;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>57AAFB6E-6833-412D-992C-3CE3A10B722D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>plist-&gt;加载-&gt;模型</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
